@@ -1,0 +1,44 @@
+scalar DateTime
+
+type Query {
+  feed: [Post!]!
+  drafts: [Post!]!
+  post(id: ID!): Post
+  personaById(id:ID!): Persona
+    personaAll: [Persona]
+}
+
+type Mutation {
+  createPersona(name: String!, apellido: String!): Persona!
+  createDraft(title: String!, content: String!, authorEmail: String!): Post!
+  deletePost(id: ID!): Post
+  publish(id: ID!): Post
+  updatePersona(id: ID!, name:String!): Persona
+}
+
+type Subscription {
+  posts: Post
+}
+
+type Post {
+  id: ID!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  isPublished: Boolean!
+  title: String!
+  content: String!
+  author: User!
+}
+
+type User {
+  id: ID!
+  email: String!
+  name: String!
+  posts: [Post!]!
+}
+
+type Persona {
+  id: ID!
+  name: String!
+  apellido: String!
+}
