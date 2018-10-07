@@ -3,12 +3,7 @@ import React, { Component } from 'react'
 import { observer, inject } from 'mobx-react'
 
 import {
-  TopAppBar,
-  TopAppBarRow,
-  TopAppBarSection,
-  TopAppBarNavigationIcon,
-  TopAppBarActionItem,
-  TopAppBarTitle,
+    SimpleTopAppBar
 } from 'rmwc'
 
 @inject('drawerStore')
@@ -17,34 +12,15 @@ class AppBar extends Component {
   render() {
     const { drawerStore } = this.props;
     return (
-      <TopAppBar>
-        <TopAppBarRow>
-          <TopAppBarSection alignStart>
-            <TopAppBarNavigationIcon
-              icon="menu"
-              onClick={() => drawerStore.toggle()}
-            />
-            <TopAppBarTitle>{drawerStore.name}</TopAppBarTitle>
-          </TopAppBarSection>
-          <TopAppBarSection alignEnd>
-            <TopAppBarActionItem aria-label="Download" alt="Download">
-              file_download
-            </TopAppBarActionItem>
-            <TopAppBarActionItem
-              aria-label="Print this page"
-              alt="Print this page"
-            >
-              print
-            </TopAppBarActionItem>
-            <TopAppBarActionItem
-              aria-label="Bookmark this page"
-              alt="Bookmark this page"
-            >
-              bookmark
-            </TopAppBarActionItem>
-          </TopAppBarSection>
-        </TopAppBarRow>
-      </TopAppBar>
+        <SimpleTopAppBar
+            title={drawerStore.name}
+            navigationIcon={{ onClick: () => drawerStore.toggle() }}
+            actionItems={[
+                { onClick: () => console.log('Do Something'), use: 'file_download' },
+                { onClick: () => console.log('Do Something'), use: 'print' },
+                { onClick: () => console.log('Do Something'), use: 'bookmark' }
+            ]}
+        />
     )
   }
 }

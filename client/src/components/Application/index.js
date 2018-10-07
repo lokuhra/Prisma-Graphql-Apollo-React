@@ -9,8 +9,10 @@ const Template = ({ title, children }) => (
     <Helmet title={title} />
     <AppBar />
     <Drawer />
+      <div className={"asd pt-16"}>
     {children}
+      </div>
   </Fragment>
-);
+)
 
 export default Template

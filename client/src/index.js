@@ -13,7 +13,7 @@ import './style/normalize.css'
 import './style/material-components-web.css'
 
 import Provider from './store'
-import Home from './views/Screen2'
+import Navigation from './components/Navigation'
 
 const wsLink = new WebSocketLink({
   uri: 'ws://localhost:4000/',
@@ -44,7 +44,7 @@ const client = new ApolloClient({
 ReactDOM.render(
   <Provider>
     <ApolloProvider client={client}>
-        <Home />
+        <Navigation />
     </ApolloProvider>
   </Provider>,
   document.getElementById('root'),

@@ -9,7 +9,7 @@ const stores = {
 }
 
 const MobXProvider = ({ children }) => (
-  <Provider {...stores}>{children}</Provider>
+    <Provider {...stores}>{children}</Provider>
 )
 
 export default MobXProvider

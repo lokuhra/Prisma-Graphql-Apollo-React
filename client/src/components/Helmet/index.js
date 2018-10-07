@@ -6,14 +6,10 @@ const _Helmet = ({ title }) => (
     <meta charSet="utf-8" />
     <title>{title}</title>
     <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-      {/*<link*/}
-          {/*rel="stylesheet"*/}
-          {/*href="../../style/normalize.css"*/}
-      {/*/>*/}
-      {/*<link*/}
-          {/*rel="stylesheet"*/}
-          {/*href="../../style/material-components-web.css"*/}
-      {/*/>*/}
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css?family=Roboto:300,400,500"

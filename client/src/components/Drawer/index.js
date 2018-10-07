@@ -2,6 +2,9 @@ import React, { Component } from 'react'
 
 import { observer, inject } from 'mobx-react'
 
+import routes from '../../utils/routes'
+import { Link } from 'buttermilk'
+
 import {
   Drawer,
   DrawerHeader,
@@ -14,8 +17,17 @@ import {
 
 @inject('drawerStore')
 @observer
+
+
 class _Drawer extends Component {
   render() {
+      const LinkItems = () =>(
+          routes.map((item, i)=>
+              <Link key={i} href={item.path} className={"no-underline"}>
+                  <ListItem>{item.name}</ListItem>
+              </Link>
+          )
+      )
     const { drawerStore } = this.props
     return (
       <Drawer
@@ -29,9 +41,7 @@ class _Drawer extends Component {
         </DrawerHeader>
         <DrawerContent>
           <List>
-            <ListItem>Cookies</ListItem>
-            <ListItem>Pizza</ListItem>
-            <ListItem>Icecream</ListItem>
+              <LinkItems />
           </List>
         </DrawerContent>
       </Drawer>

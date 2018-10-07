@@ -11,6 +11,7 @@
     "apollo-link-ws": "^1.0.9",
     "apollo-mobx": "^1.1.11",
     "apollo-utilities": "^1.0.21",
+    "buttermilk": "^1.1.2",
     "customize-cra": "^0.1.0-beta6",
     "graphql": "^14.0.2",
     "graphql-tag": "^2.10.0",
@@ -26,16 +27,16 @@
     "react-app-rewired": "^1.6.2",
     "react-dom": "^16.5.2",
     "react-helmet": "^5.2.0",
+    "react-router-dom": "^4.3.1",
     "react-scripts": "2.0.4",
     "rmwc": "^3.0.4",
     "subscriptions-transport-ws": "^0.9.15"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "start2": "react-app-rewired start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "start": "react-app-rewired start",
+    "build": "react-app-rewiredbuild",
+    "test": "react-app-rewired test",
+    "eject": "react-app-rewired eject"
   },
   "eslintConfig": {
     "extends": "react-app"
