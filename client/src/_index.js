@@ -8,12 +8,11 @@ import { InMemoryCache } from 'apollo-cache-inmemory'
 import { split } from 'apollo-link'
 import { WebSocketLink } from 'apollo-link-ws'
 import { getMainDefinition } from 'apollo-utilities'
+// import App from './components/App'
+import Home from './views/Home'
 
-import './style/normalize.css'
-import './style/material-components-web.css'
+import 'material-components-web/dist/material-components-web.min.css'
 
-import Provider from './store'
-import Home from './views/Screen2'
 
 const wsLink = new WebSocketLink({
   uri: 'ws://localhost:4000/',
@@ -40,12 +39,13 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 })
 
+// const isMobile = ()=> window.innerWidth<600 ? true : false
 
 ReactDOM.render(
-  <Provider>
-    <ApolloProvider client={client}>
-        <Home />
-    </ApolloProvider>
-  </Provider>,
+  <ApolloProvider client={client}>
+    <div>
+      <Home />
+    </div>
+  </ApolloProvider>,
   document.getElementById('root'),
 )

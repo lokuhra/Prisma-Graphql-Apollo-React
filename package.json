@@ -1,5 +1,5 @@
 {
-  "name": "Prisma-Graphql-Apollo-React",
+  "name": "asd",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
@@ -15,6 +15,6 @@
     "prisma-client-lib": "^1.17.1"
   },
   "scripts": {
-    "start": "nodemon src/index.js",
+    "start": "nodemon src/index.js"
   }
 }
